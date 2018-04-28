@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+    <properties/>
+    <struct>
+        <and abstract="true" mandatory="true" name="Minesweeper">
+            <and mandatory="true" name="Base">
+                <and mandatory="true" name="GameArena">
+                    <alt mandatory="true" name="Bombs">
+                        <feature name="9Bombs"/>
+                        <feature name="40Bombs"/>
+                        <feature name="99Bombs"/>
+                        <feature name="UsedDefined#Bombs"/>
+                    </alt>
+                    <alt mandatory="true" name="Size">
+                        <feature name="UserDefinedSize"/>
+                        <feature name="9x9"/>
+                        <feature name="20x20"/>
+                        <feature name="30x24"/>
+                    </alt>
+                </and>
+                <feature mandatory="true" name="Bombplacer"/>
+                <alt mandatory="true" name="Solver">
+                    <feature name="Recursiv"/>
+                    <feature name="LoopBased"/>
+                </alt>
+            </and>
+            <alt abstract="true" mandatory="true" name="View">
+                <and name="GUI">
+                    <and mandatory="true" name="MainWindow">
+                        <feature mandatory="true" name="DisplayedGameField"/>
+                        <feature name="Time"/>
+                        <feature name="DisplayedScore"/>
+                    </and>
+                    <and name="ScoreWindow">
+                        <feature mandatory="true" name="EndScore"/>
+                        <feature name="ScoreList"/>
+                        <feature name="CreateNewGame"/>
+                        <feature name="CloseGame"/>
+                    </and>
+                    <feature mandatory="true" name="Settingswindow"/>
+                </and>
+                <feature name="Console"/>
+            </alt>
+            <alt name="Score">
+                <feature name="TimeBasedScore"/>
+                <feature name="WeightedScore"/>
+            </alt>
+        </and>
+    </struct>
+    <constraints>
+        <rule>
+            <imp>
+                <conj>
+                    <var>Score</var>
+                    <var>GUI</var>
+                </conj>
+                <conj>
+                    <var>ScoreWindow</var>
+                    <var>DisplayedScore</var>
+                </conj>
+            </imp>
+        </rule>
+        <rule>
+            <imp>
+                <var>9x9</var>
+                <var>9Bombs</var>
+            </imp>
+        </rule>
+        <rule>
+            <imp>
+                <var>20x20</var>
+                <var>40Bombs</var>
+            </imp>
+        </rule>
+        <rule>
+            <imp>
+                <var>30x24</var>
+                <var>99Bombs</var>
+            </imp>
+        </rule>
+    </constraints>
+    <calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+    <comments/>
+    <featureOrder userDefined="false"/>
+</featureModel>
