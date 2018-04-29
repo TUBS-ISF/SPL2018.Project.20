@@ -9,6 +9,8 @@
     <feature automatic="unselected" name="BigSize"/>
     <feature automatic="selected" name="Bombplacer"/>
     <feature automatic="selected" name="Bombs"/>
+    <feature automatic="unselected" name="BombImage"/>
+    <feature manual="selected" name="Bombsymbol"/>
     <feature automatic="selected" name="Solver"/>
     <feature automatic="unselected" name="Recursive"/>
     <feature manual="selected" name="Iterative"/>
