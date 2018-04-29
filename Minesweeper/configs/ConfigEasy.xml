@@ -4,9 +4,9 @@
     <feature automatic="selected" name="Base"/>
     <feature automatic="selected" name="GameArena"/>
     <feature automatic="selected" name="Size"/>
-    <feature automatic="unselected" name="SmallSize"/>
+    <feature manual="selected" name="SmallSize"/>
     <feature automatic="unselected" name="MiddleSize"/>
-    <feature manual="selected" name="BigSize"/>
+    <feature automatic="unselected" name="BigSize"/>
     <feature automatic="selected" name="Bombplacer"/>
     <feature automatic="selected" name="Bombs"/>
     <feature automatic="selected" name="Solver"/>
@@ -16,25 +16,21 @@
     <feature automatic="selected" manual="selected" name="GUI"/>
     <feature automatic="selected" name="MainWindow"/>
     <feature automatic="selected" name="DisplayedGameField"/>
-    <feature manual="selected" name="Time"/>
     <feature automatic="selected" name="DisplayedScore"/>
     <feature automatic="selected" name="ScoreWindow"/>
     <feature automatic="selected" name="EndScore"/>
     <feature manual="selected" name="ScoreList"/>
-    <feature manual="selected" name="CreateNewGame"/>
     <feature manual="selected" name="CloseGame"/>
     <feature automatic="selected" name="ChallangeWindow"/>
-    <feature manual="selected" name="CompletedChallenges"/>
     <feature manual="selected" name="RunningChallenges"/>
     <feature automatic="unselected" name="Console"/>
     <feature automatic="selected" name="Difficulty"/>
-    <feature automatic="unselected" name="Easy"/>
-    <feature manual="selected" name="Middle"/>
+    <feature manual="selected" name="Easy"/>
+    <feature automatic="unselected" name="Middle"/>
     <feature automatic="unselected" name="Hard"/>
     <feature automatic="selected" manual="selected" name="Score"/>
     <feature manual="selected" name="TimeBasedScore"/>
     <feature automatic="unselected" name="WeightedScore"/>
-    <feature automatic="selected" manual="selected" name="Challenges"/>
+    <feature automatic="selected" name="Challenges"/>
     <feature manual="selected" name="TimeBasedChallanges"/>
-    <feature manual="selected" name="DifficultyChallanges"/>
 </configuration>

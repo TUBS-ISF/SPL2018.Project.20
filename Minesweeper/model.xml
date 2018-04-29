@@ -3,29 +3,28 @@
     <properties/>
     <struct>
         <and abstract="true" mandatory="true" name="Minesweeper">
+            <description>
+Model of Minesweeper game.
+</description>
             <and mandatory="true" name="Base">
                 <and mandatory="true" name="GameArena">
-                    <alt mandatory="true" name="Bombs">
-                        <feature name="9Bombs"/>
-                        <feature name="40Bombs"/>
-                        <feature name="99Bombs"/>
-                        <feature name="UsedDefined#Bombs"/>
-                    </alt>
                     <alt mandatory="true" name="Size">
-                        <feature name="UserDefinedSize"/>
-                        <feature name="9x9"/>
-                        <feature name="20x20"/>
-                        <feature name="30x24"/>
+                        <feature name="SmallSize"/>
+                        <feature name="MiddleSize"/>
+                        <feature name="BigSize"/>
                     </alt>
                 </and>
                 <feature mandatory="true" name="Bombplacer"/>
+                <and mandatory="true" name="Bombs">
+                    <feature name="BombImage"/>
+                </and>
                 <alt mandatory="true" name="Solver">
-                    <feature name="Recursiv"/>
-                    <feature name="LoopBased"/>
+                    <feature name="Recursive"/>
+                    <feature name="Iterative"/>
                 </alt>
             </and>
             <alt abstract="true" mandatory="true" name="View">
-                <and name="GUI">
+                <and abstract="true" name="GUI">
                     <and mandatory="true" name="MainWindow">
                         <feature mandatory="true" name="DisplayedGameField"/>
                         <feature name="Time"/>
@@ -37,14 +36,26 @@
                         <feature name="CreateNewGame"/>
                         <feature name="CloseGame"/>
                     </and>
-                    <feature mandatory="true" name="Settingswindow"/>
+                    <and name="ChallangeWindow">
+                        <feature name="CompletedChallenges"/>
+                        <feature name="RunningChallenges"/>
+                    </and>
                 </and>
                 <feature name="Console"/>
+            </alt>
+            <alt abstract="true" mandatory="true" name="Difficulty">
+                <feature name="Easy"/>
+                <feature name="Middle"/>
+                <feature name="Hard"/>
             </alt>
             <alt name="Score">
                 <feature name="TimeBasedScore"/>
                 <feature name="WeightedScore"/>
             </alt>
+            <or abstract="true" name="Challenges">
+                <feature name="TimeBasedChallanges"/>
+                <feature name="DifficultyChallanges"/>
+            </or>
         </and>
     </struct>
     <constraints>
@@ -62,20 +73,21 @@
         </rule>
         <rule>
             <imp>
-                <var>9x9</var>
-                <var>9Bombs</var>
+                <conj>
+                    <var>Challenges</var>
+                    <var>GUI</var>
+                </conj>
+                <var>ChallangeWindow</var>
             </imp>
         </rule>
         <rule>
             <imp>
-                <var>20x20</var>
-                <var>40Bombs</var>
-            </imp>
-        </rule>
-        <rule>
-            <imp>
-                <var>30x24</var>
-                <var>99Bombs</var>
+                <not>
+                    <var>Challenges</var>
+                </not>
+                <not>
+                    <var>ChallangeWindow</var>
+                </not>
             </imp>
         </rule>
     </constraints>

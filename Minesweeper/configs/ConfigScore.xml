@@ -5,8 +5,8 @@
     <feature automatic="selected" name="GameArena"/>
     <feature automatic="selected" name="Size"/>
     <feature automatic="unselected" name="SmallSize"/>
-    <feature automatic="unselected" name="MiddleSize"/>
-    <feature manual="selected" name="BigSize"/>
+    <feature manual="selected" name="MiddleSize"/>
+    <feature automatic="unselected" name="BigSize"/>
     <feature automatic="selected" name="Bombplacer"/>
     <feature automatic="selected" name="Bombs"/>
     <feature automatic="selected" name="Solver"/>
@@ -23,9 +23,6 @@
     <feature manual="selected" name="ScoreList"/>
     <feature manual="selected" name="CreateNewGame"/>
     <feature manual="selected" name="CloseGame"/>
-    <feature automatic="selected" name="ChallangeWindow"/>
-    <feature manual="selected" name="CompletedChallenges"/>
-    <feature manual="selected" name="RunningChallenges"/>
     <feature automatic="unselected" name="Console"/>
     <feature automatic="selected" name="Difficulty"/>
     <feature automatic="unselected" name="Easy"/>
@@ -34,7 +31,4 @@
     <feature automatic="selected" manual="selected" name="Score"/>
     <feature manual="selected" name="TimeBasedScore"/>
     <feature automatic="unselected" name="WeightedScore"/>
-    <feature automatic="selected" manual="selected" name="Challenges"/>
-    <feature manual="selected" name="TimeBasedChallanges"/>
-    <feature manual="selected" name="DifficultyChallanges"/>
 </configuration>
