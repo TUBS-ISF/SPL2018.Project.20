@@ -14,6 +14,10 @@
     <feature automatic="selected" name="Solver"/>
     <feature automatic="unselected" name="Recursive"/>
     <feature manual="selected" name="Iterative"/>
+    <feature automatic="selected" name="Difficulty"/>
+    <feature manual="selected" name="Easy"/>
+    <feature automatic="unselected" name="Middle"/>
+    <feature automatic="unselected" name="Hard"/>
     <feature automatic="selected" name="View"/>
     <feature automatic="selected" manual="selected" name="GUI"/>
     <feature automatic="selected" name="MainWindow"/>
@@ -26,10 +30,6 @@
     <feature automatic="selected" name="ChallangeWindow"/>
     <feature manual="selected" name="RunningChallenges"/>
     <feature automatic="unselected" name="Console"/>
-    <feature automatic="selected" name="Difficulty"/>
-    <feature manual="selected" name="Easy"/>
-    <feature automatic="unselected" name="Middle"/>
-    <feature automatic="unselected" name="Hard"/>
     <feature automatic="selected" manual="selected" name="Score"/>
     <feature manual="selected" name="TimeBasedScore"/>
     <feature automatic="unselected" name="WeightedScore"/>

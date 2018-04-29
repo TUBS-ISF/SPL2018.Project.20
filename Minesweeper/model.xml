@@ -8,7 +8,7 @@ Model of Minesweeper game.
 The goal of the game is to uncover all fields without hitting a bombs.
 Cells in the game arena specify how many bombs around.
 </description>
-            <and mandatory="true" name="Base">
+            <and abstract="true" mandatory="true" name="Base">
                 <description>
 Basic Features of a Minesweeper game.
 </description>
@@ -24,6 +24,12 @@ The game arena size of the minesweeper game.
                         <feature name="MiddleSize"/>
                         <feature name="BigSize"/>
                     </alt>
+                    <feature name="ColoredNumbers">
+                        <description>
+All numbers of cell have a different color.
+All cells which have bombs around have numbers.
+</description>
+                    </feature>
                 </and>
                 <feature mandatory="true" name="Bombplacer">
                     <description>
