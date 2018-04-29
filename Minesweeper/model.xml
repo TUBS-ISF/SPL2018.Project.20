@@ -20,9 +20,21 @@ The game arena of a minesweeper game contains a field where Bombs are placed. Ea
                         <description>
 The game arena size of the minesweeper game.
 </description>
-                        <feature name="SmallSize"/>
-                        <feature name="MiddleSize"/>
-                        <feature name="BigSize"/>
+                        <feature name="SmallSize">
+                            <description>
+The field is 9x9.
+</description>
+                        </feature>
+                        <feature name="MiddleSize">
+                            <description>
+The field is 20x20.
+</description>
+                        </feature>
+                        <feature name="BigSize">
+                            <description>
+The field is 30x24.
+</description>
+                        </feature>
                     </alt>
                     <feature name="ColoredNumbers">
                         <description>
@@ -37,15 +49,34 @@ Places the bombs in the game arena.
 </description>
                 </feature>
                 <alt mandatory="true" name="Bombs">
-                    <feature name="BombImage"/>
-                    <feature name="Bombsymbol"/>
+                    <description>
+When a player is hitting a bomb the game is over.
+</description>
+                    <feature name="BombImage">
+                        <description>
+Bombs are represented by an image.
+</description>
+                    </feature>
+                    <feature name="Bombsymbol">
+                        <description>
+Bombs are represented by an symbol.
+</description>
+                    </feature>
                 </alt>
                 <alt mandatory="true" name="Solver">
                     <description>
 When the player uncover a cell which have zero bombs around, the solver uncovers all cells around which have also zero bombs around.
 </description>
-                    <feature name="Recursive"/>
-                    <feature name="Iterative"/>
+                    <feature name="Recursive">
+                        <description>
+The solver has a recursive algorithm to uncover cells.
+</description>
+                    </feature>
+                    <feature name="Iterative">
+                        <description>
+The solver has a iterative algorithm to uncover cells.
+</description>
+                    </feature>
                 </alt>
             </and>
             <alt abstract="true" mandatory="true" name="Difficulty">
@@ -70,26 +101,66 @@ Graphical User Interface for the game.
                         <description>
 Contains the diplayed game arena, time and score.
 </description>
-                        <feature mandatory="true" name="DisplayedGameField"/>
-                        <feature name="Time"/>
-                        <feature name="DisplayedScore"/>
-                        <feature name="PauseButton"/>
+                        <feature mandatory="true" name="DisplayedGameField">
+                            <description>
+An illustration of the game arena.
+</description>
+                        </feature>
+                        <feature name="Time">
+                            <description>
+Time played since the game started.
+</description>
+                        </feature>
+                        <feature name="DisplayedScore">
+                            <description>
+The score the player has at the moment.
+</description>
+                        </feature>
+                        <feature name="PauseButton">
+                            <description>
+Button to pause the game.
+</description>
+                        </feature>
                     </and>
                     <and name="ScoreWindow">
                         <description>
 After a game ends this window shows the score the player reached.
 </description>
-                        <feature mandatory="true" name="EndScore"/>
-                        <feature name="ScoreList"/>
-                        <feature name="CreateNewGame"/>
-                        <feature name="CloseGame"/>
+                        <feature mandatory="true" name="EndScore">
+                            <description>
+The score the player reaches at the end of the game.
+</description>
+                        </feature>
+                        <feature name="ScoreList">
+                            <description>
+Scores that are reached by the player.
+</description>
+                        </feature>
+                        <feature name="CreateNewGame">
+                            <description>
+Function to restart the game.
+</description>
+                        </feature>
+                        <feature name="CloseGame">
+                            <description>
+Function to exit the game.
+</description>
+                        </feature>
                     </and>
                     <or name="ChallangeWindow">
                         <description>
 Shows the challanges the player reaches/not reaches in this game.
 </description>
-                        <feature name="CompletedChallenges"/>
-                        <feature name="RunningChallenges"/>
+                        <feature name="CompletedChallenges">
+                            <description>
+Challanges that are completed by the player.
+</description>
+                        </feature>
+                        <feature name="RunningChallenges">
+                            <description>
+Challanges that are not completed by the player.
+</description>
+                        </feature>
                     </or>
                 </and>
                 <feature name="Console">
