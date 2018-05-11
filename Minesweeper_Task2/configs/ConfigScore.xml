@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+    <feature automatic="selected" name="Minesweeper"/>
+    <feature automatic="selected" name="Base"/>
+    <feature automatic="selected" name="GameArena"/>
+    <feature automatic="selected" name="Size"/>
+    <feature automatic="unselected" name="SmallSize"/>
+    <feature manual="selected" name="MiddleSize"/>
+    <feature automatic="unselected" name="BigSize"/>
+    <feature automatic="selected" name="Bombplacer"/>
+    <feature automatic="selected" name="Bombs"/>
+    <feature automatic="unselected" name="BombImage"/>
+    <feature manual="selected" name="Bombsymbol"/>
+    <feature automatic="selected" name="Solver"/>
+    <feature automatic="unselected" name="Recursive"/>
+    <feature manual="selected" name="Iterative"/>
+    <feature automatic="selected" name="Difficulty"/>
+    <feature manual="selected" name="Easy"/>
+    <feature automatic="unselected" name="Middle"/>
+    <feature automatic="unselected" name="Hard"/>
+    <feature automatic="selected" name="View"/>
+    <feature automatic="selected" manual="selected" name="GUI"/>
+    <feature automatic="selected" name="MainWindow"/>
+    <feature automatic="selected" name="DisplayedGameField"/>
+    <feature manual="selected" name="Time"/>
+    <feature automatic="selected" name="DisplayedScore"/>
+    <feature automatic="selected" name="ScoreWindow"/>
+    <feature automatic="selected" name="EndScore"/>
+    <feature manual="selected" name="ScoreList"/>
+    <feature manual="selected" name="CreateNewGame"/>
+    <feature manual="selected" name="CloseGame"/>
+    <feature automatic="unselected" name="Console"/>
+    <feature automatic="selected" manual="selected" name="Score"/>
+    <feature manual="selected" name="TimeBasedScore"/>
+    <feature automatic="unselected" name="WeightedScore"/>
+</configuration>
