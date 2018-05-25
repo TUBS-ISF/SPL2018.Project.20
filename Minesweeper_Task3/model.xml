@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+    <properties/>
+    <struct>
+        <and abstract="true" mandatory="true" name="Minesweeper">
+            <description>
+Model of Minesweeper game.
+The goal of the game is to uncover all fields without hitting a bombs.
+Cells in the game arena specify how many bombs around.
+</description>
+            <and abstract="true" mandatory="true" name="Base">
+                <description>
+Basic Features of a Minesweeper game.
+</description>
+                <and mandatory="true" name="GameArena">
+                    <description>
+The game arena of a minesweeper game contains a field where Bombs are placed. Each cell has a number which specifies how many bombs around.
+</description>
+                    <alt abstract="true" mandatory="true" name="Size">
+                        <description>
+The game arena size of the minesweeper game.
+</description>
+                        <feature name="SmallSize">
+                            <description>
+The field is 9x9.
+</description>
+                        </feature>
+                        <feature name="MiddleSize">
+                            <description>
+The field is 20x20.
+</description>
+                        </feature>
+                        <feature name="BigSize">
+                            <description>
+The field is 30x24.
+</description>
+                        </feature>
+                    </alt>
+                    <feature abstract="true" name="ColoredNumbers">
+                        <description>
+All numbers of cell have a different color.
+All cells which have bombs around have numbers.
+</description>
+                    </feature>
+                </and>
+                <feature mandatory="true" name="Bombplacer">
+                    <description>
+Places the bombs in the game arena.
+</description>
+                </feature>
+                <alt abstract="true" mandatory="true" name="Bombs">
+                    <description>
+When a player is hitting a bomb the game is over.
+</description>
+                    <feature abstract="true" name="BombImage">
+                        <description>
+Bombs are represented by an image.
+</description>
+                    </feature>
+                    <feature abstract="true" name="Bombsymbol">
+                        <description>
+Bombs are represented by an symbol.
+</description>
+                    </feature>
+                </alt>
+                <alt abstract="true" mandatory="true" name="Solver">
+                    <description>
+When the player uncover a cell which have zero bombs around, the solver uncovers all cells around which have also zero bombs around.
+</description>
+                    <feature name="Recursive">
+                        <description>
+The solver has a recursive algorithm to uncover cells.
+</description>
+                    </feature>
+                    <feature name="Iterative">
+                        <description>
+The solver has a iterative algorithm to uncover cells.
+</description>
+                    </feature>
+                </alt>
+            </and>
+            <alt abstract="true" mandatory="true" name="Difficulty">
+                <description>
+The difficulty of the minesweeper game is based on how many bombs are placed.
+</description>
+                <feature name="Easy"/>
+                <feature name="Middle"/>
+                <feature name="Hard"/>
+            </alt>
+            <feature abstract="true" name="Pause">
+                <description>
+When you pause the game, you stop the time and the game arena is hidden.
+</description>
+            </feature>
+            <alt abstract="true" mandatory="true" name="View">
+                <and abstract="true" name="GUI">
+                    <description>
+Graphical User Interface for the game.
+</description>
+                    <and abstract="true" mandatory="true" name="MainWindow">
+                        <description>
+Contains the diplayed game arena, time and score.
+</description>
+                        <feature abstract="true" mandatory="true" name="DisplayedGameField">
+                            <description>
+An illustration of the game arena.
+</description>
+                        </feature>
+                        <feature abstract="true" name="Time">
+                            <description>
+Time played since the game started.
+</description>
+                        </feature>
+                        <feature abstract="true" name="DisplayedScore">
+                            <description>
+The score the player has at the moment.
+</description>
+                        </feature>
+                        <feature abstract="true" name="PauseButton">
+                            <description>
+Button to pause the game.
+</description>
+                        </feature>
+                    </and>
+                    <and abstract="true" name="ScoreWindow">
+                        <description>
+After a game ends this window shows the score the player reached.
+</description>
+                        <feature abstract="true" mandatory="true" name="EndScore">
+                            <description>
+The score the player reaches at the end of the game.
+</description>
+                        </feature>
+                        <feature abstract="true" name="ScoreList">
+                            <description>
+Scores that are reached by the player.
+</description>
+                        </feature>
+                        <feature abstract="true" name="CreateNewGame">
+                            <description>
+Function to restart the game.
+</description>
+                        </feature>
+                        <feature abstract="true" name="CloseGame">
+                            <description>
+Function to exit the game.
+</description>
+                        </feature>
+                    </and>
+                    <or abstract="true" name="ChallangeWindow">
+                        <description>
+Shows the challanges the player reaches/not reaches in this game.
+</description>
+                        <feature abstract="true" name="CompletedChallenges">
+                            <description>
+Challanges that are completed by the player.
+</description>
+                        </feature>
+                        <feature abstract="true" name="RunningChallenges">
+                            <description>
+Challanges that are not completed by the player.
+</description>
+                        </feature>
+                    </or>
+                </and>
+                <feature name="Console">
+                    <description>
+Input and Output via Console.
+</description>
+                </feature>
+            </alt>
+            <alt abstract="true" name="Score">
+                <description>
+When you finishing a game you're getting a score.
+</description>
+                <feature abstract="true" name="TimeBasedScore">
+                    <description>
+The score you get is based on the time you need to solve the game.
+</description>
+                </feature>
+                <feature abstract="true" name="WeightedScore">
+                    <description>
+You're getting more point when clicking fast successively.
+</description>
+                </feature>
+            </alt>
+            <or abstract="true" name="Challenges">
+                <description>
+You're getting more point when you complete challenges.
+</description>
+                <feature abstract="true" name="TimeBasedChallanges">
+                    <description>
+The faster the player solves the game more point he gets.
+</description>
+                </feature>
+                <feature abstract="true" name="DifficultyChallanges">
+                    <description>
+The more difficult the game is the more points the player gets.
+</description>
+                </feature>
+            </or>
+        </and>
+    </struct>
+    <constraints>
+        <rule>
+            <imp>
+                <conj>
+                    <var>Score</var>
+                    <var>GUI</var>
+                </conj>
+                <conj>
+                    <var>ScoreWindow</var>
+                    <var>DisplayedScore</var>
+                </conj>
+            </imp>
+        </rule>
+        <rule>
+            <imp>
+                <conj>
+                    <var>Challenges</var>
+                    <var>GUI</var>
+                </conj>
+                <var>ChallangeWindow</var>
+            </imp>
+        </rule>
+        <rule>
+            <imp>
+                <var>Pause</var>
+                <var>PauseButton</var>
+            </imp>
+        </rule>
+    </constraints>
+    <calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+    <comments/>
+    <featureOrder userDefined="false"/>
+</featureModel>

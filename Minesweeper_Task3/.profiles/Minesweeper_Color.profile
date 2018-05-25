@@ -1,0 +1,12 @@
+true
+Easy=Light_Green
+GameArena=NO_COLOR
+Size=Orange
+Console=Cyan
+MiddleSize=Orange
+SmallSize=Red
+Hard=Blue
+Iterative=Dark_Green
+BigSize=Yellow
+Recursive=Light_Green
+Middle=Dark_Green
