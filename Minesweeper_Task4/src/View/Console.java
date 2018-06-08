@@ -1,11 +1,10 @@
-//#if Console
 package View;
 
 import java.util.Observable;
 import java.util.Observer;
 import java.util.Scanner;
 
-import Controller.Controller;
+import Control.Controller;
 import base.GameArena;
 
 public class Console implements Observer {
@@ -21,7 +20,7 @@ public class Console implements Observer {
 	public void printStart(GameArena g) {
 		System.out.println("Minesweeper Game!\nGood Luck!\n");
 		System.out.println("Commands:");
-		System.out.println("1. {uncover x,y}, x={0,1,...,x}, y= {0,1,...,y}\n");
+		System.out.println("1. {uncover x,y}, x={0,1,...,9, A,...}, y= {0,1,...,y}\n");
 		System.out.println(g);
 		printCommandLine();
 	}
@@ -52,7 +51,12 @@ public class Console implements Observer {
 					printError();
 				} else {
 					try {
-					int x = Integer.parseInt(positionArray[0], 10);
+						int x = 0;
+					if (positionArray[0].charAt(0) < 'A')
+						x = Integer.parseInt(positionArray[0], 10);
+					else
+						x = positionArray[0].charAt(0) - 'A' + 10;
+					//int x = Integer.parseInt(positionArray[0], 10);
 					int y = Integer.parseInt(positionArray[1], 10);
 					switch (controller.uncoverAt(x, y)) {
 					case GAME_FORBIDDEN_PLAY:

@@ -12,8 +12,8 @@
     <feature automatic="unselected" name="BombImage"/>
     <feature manual="selected" name="Bombsymbol"/>
     <feature automatic="selected" name="Solver"/>
-    <feature automatic="unselected" name="Recursive"/>
-    <feature manual="selected" name="Iterative"/>
+    <feature manual="selected" name="Recursive"/>
+    <feature automatic="unselected" name="Iterative"/>
     <feature automatic="selected" name="Difficulty"/>
     <feature manual="selected" name="Easy"/>
     <feature automatic="unselected" name="Middle"/>

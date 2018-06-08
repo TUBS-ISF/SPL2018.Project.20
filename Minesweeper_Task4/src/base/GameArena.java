@@ -1,27 +1,35 @@
 package base;
 
+import java.util.List;
 import java.util.Observable;
+
+import interfaces.Gamefield;
+import interfaces.Solver;
+import loader.PluginLoader;
 
 public class GameArena extends Observable{
 	
 	private Cell[][] field;
 	private WinChecker checker;
+	private Solver solver;
 	
 	public GameArena() {
 		int numberBombs;
-		//#ifdef SmallSize
-		field = new Cell[9][9];
-		//#elifdef MiddleSize
-//@		field = new Cell[16][16];
-		//#elifdef BigSize
-//@		field = new Cell[30][16];
-		//#endif
+		List<Gamefield> gamefieldList = PluginLoader.load(Gamefield.class);
+		if (gamefieldList .size() != 1)
+			System.exit(-1);
+		field = gamefieldList.get(0).getField();
+		List<Solver> solverList = PluginLoader.load(Solver.class);
+		if (solverList.size() != 1)
+			System.exit(-1);
+		solver = solverList.get(0);
 		for (int i = 0; i < field.length; ++i)
 			for (int j = 0; j < field[i].length; ++j)
 				field[i][j] = new Cell();
 		numberBombs = Bombplacer.placebombs(field);
 		setCellNumbers();
 		checker = new WinChecker(field.length, field[0].length, numberBombs);
+		
 	}
 	
 	private void setCellNumbers() {
@@ -58,11 +66,7 @@ public class GameArena extends Observable{
 		}
 		if (field[x][y].getBombsAround() == 0) {
 			int uncoveredCells = 0;
-			//#ifdef Iterative
-			uncoveredCells = Solver.solveIterative(field, x, y);
-			//#elifdef Recursive
-//@			uncoveredCells = Solver.solveRecusive(field, x, y);
-			//#endif
+			uncoveredCells = solver.solve(field, x, y);
 			checker.increasedUncoveredCells(uncoveredCells);
 		} else {
 			field[x][y].setUncovered();
@@ -84,7 +88,10 @@ public class GameArena extends Observable{
 		builder.append("  ");
 		builder.append('|');
 		for (int i = 0; i < field.length; ++i) {
-			builder.append(columnNumber);
+			if (i < 10)
+				builder.append(columnNumber);
+			else
+				builder.append((char)('A' + (columnNumber-10)));
 			builder.append('|');
 			++columnNumber;
 		}
@@ -93,7 +100,8 @@ public class GameArena extends Observable{
 		builder.append('\n');
 		for (int i = 0; i < field[0].length; ++i) {
 			builder.append(i);
-			builder.append(' ');
+			if (i < 10)
+				builder.append(' ');
 			builder.append('|');
 			for (int j = 0; j < field.length; ++j) {
 				if (field[j][i].isCovered()) {

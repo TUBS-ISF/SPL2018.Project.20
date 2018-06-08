@@ -4,8 +4,8 @@
     <feature automatic="selected" name="Base"/>
     <feature automatic="selected" name="GameArena"/>
     <feature automatic="selected" name="Size"/>
-    <feature manual="selected" name="SmallSize"/>
-    <feature automatic="unselected" name="MiddleSize"/>
+    <feature automatic="unselected" name="SmallSize"/>
+    <feature manual="selected" name="MiddleSize"/>
     <feature automatic="unselected" name="BigSize"/>
     <feature automatic="selected" name="Bombplacer"/>
     <feature automatic="selected" name="Bombs"/>
@@ -36,8 +36,6 @@
     <feature automatic="unselected" name="RunningChallenges"/>
     <feature manual="selected" name="Console"/>
     <feature automatic="selected" manual="selected" name="Score"/>
-    <feature automatic="unselected" name="TimeBasedScore"/>
-    <feature manual="selected" name="WeightedScore"/>
-    <feature automatic="selected" manual="selected" name="Challenges"/>
-    <feature manual="selected" name="TimeBasedChallanges"/>
+    <feature manual="selected" name="TimeBasedScore"/>
+    <feature automatic="unselected" name="WeightedScore"/>
 </configuration>
