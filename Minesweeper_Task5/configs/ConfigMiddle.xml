@@ -15,8 +15,8 @@
     <feature automatic="unselected" name="Recursive"/>
     <feature manual="selected" name="Iterative"/>
     <feature automatic="selected" name="Difficulty"/>
-    <feature manual="selected" name="Easy"/>
-    <feature automatic="unselected" name="Middle"/>
+    <feature automatic="unselected" name="Easy"/>
+    <feature manual="selected" name="Middle"/>
     <feature automatic="unselected" name="Hard"/>
     <feature automatic="unselected" name="Pause"/>
     <feature automatic="selected" name="View"/>

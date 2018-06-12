@@ -4,16 +4,19 @@
     <feature automatic="selected" name="Base"/>
     <feature automatic="selected" name="GameArena"/>
     <feature automatic="selected" name="Size"/>
-    <feature automatic="unselected" name="SmallSize"/>
-    <feature manual="selected" name="MiddleSize"/>
+    <feature manual="selected" name="SmallSize"/>
+    <feature automatic="unselected" name="MiddleSize"/>
     <feature automatic="unselected" name="BigSize"/>
+    <feature automatic="selected" manual="selected" name="Score"/>
+    <feature manual="selected" name="TimeBasedScore"/>
+    <feature manual="selected" name="WeightedScore"/>
     <feature automatic="selected" name="Bombplacer"/>
     <feature automatic="selected" name="Bombs"/>
     <feature automatic="unselected" name="BombImage"/>
     <feature manual="selected" name="Bombsymbol"/>
     <feature automatic="selected" name="Solver"/>
-    <feature automatic="unselected" name="Recursive"/>
-    <feature manual="selected" name="Iterative"/>
+    <feature manual="selected" name="Recursive"/>
+    <feature automatic="unselected" name="Iterative"/>
     <feature automatic="selected" name="Difficulty"/>
     <feature manual="selected" name="Easy"/>
     <feature automatic="unselected" name="Middle"/>
@@ -35,4 +38,6 @@
     <feature automatic="unselected" name="CompletedChallenges"/>
     <feature automatic="unselected" name="RunningChallenges"/>
     <feature manual="selected" name="Console"/>
+    <feature automatic="selected" manual="selected" name="Challenges"/>
+    <feature manual="selected" name="TimeBasedChallanges"/>
 </configuration>

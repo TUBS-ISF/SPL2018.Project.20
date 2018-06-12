@@ -5,19 +5,19 @@
     <feature automatic="selected" name="GameArena"/>
     <feature automatic="selected" name="Size"/>
     <feature automatic="unselected" name="SmallSize"/>
-    <feature manual="selected" name="MiddleSize"/>
-    <feature automatic="unselected" name="BigSize"/>
+    <feature automatic="unselected" name="MiddleSize"/>
+    <feature manual="selected" name="BigSize"/>
     <feature automatic="selected" name="Bombplacer"/>
     <feature automatic="selected" name="Bombs"/>
     <feature automatic="unselected" name="BombImage"/>
     <feature manual="selected" name="Bombsymbol"/>
     <feature automatic="selected" name="Solver"/>
-    <feature automatic="unselected" name="Recursive"/>
-    <feature manual="selected" name="Iterative"/>
+    <feature manual="selected" name="Recursive"/>
+    <feature automatic="unselected" name="Iterative"/>
     <feature automatic="selected" name="Difficulty"/>
-    <feature manual="selected" name="Easy"/>
+    <feature automatic="unselected" name="Easy"/>
     <feature automatic="unselected" name="Middle"/>
-    <feature automatic="unselected" name="Hard"/>
+    <feature manual="selected" name="Hard"/>
     <feature automatic="unselected" name="Pause"/>
     <feature automatic="selected" name="View"/>
     <feature automatic="unselected" name="GUI"/>

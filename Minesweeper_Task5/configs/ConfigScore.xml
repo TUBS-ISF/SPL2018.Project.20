@@ -7,6 +7,9 @@
     <feature automatic="unselected" name="SmallSize"/>
     <feature manual="selected" name="MiddleSize"/>
     <feature automatic="unselected" name="BigSize"/>
+    <feature automatic="selected" manual="selected" name="Score"/>
+    <feature manual="selected" name="TimeBasedScore"/>
+    <feature manual="selected" name="WeightedScore"/>
     <feature automatic="selected" name="Bombplacer"/>
     <feature automatic="selected" name="Bombs"/>
     <feature automatic="unselected" name="BombImage"/>
