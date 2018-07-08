@@ -5,9 +5,9 @@
     <feature automatic="selected" name="GameArena"/>
     <feature automatic="selected" name="Size"/>
     <feature automatic="unselected" name="SmallSize"/>
-    <feature automatic="unselected" name="MiddleSize"/>
-    <feature manual="selected" name="BigSize"/>
-    <feature automatic="selected" name="Score"/>
+    <feature manual="selected" name="MiddleSize"/>
+    <feature automatic="unselected" name="BigSize"/>
+    <feature automatic="selected" manual="selected" name="Score"/>
     <feature manual="selected" name="TimeBasedScore"/>
     <feature manual="selected" name="WeightedScore"/>
     <feature automatic="selected" name="Bombplacer"/>
@@ -19,8 +19,8 @@
     <feature manual="selected" name="Iterative"/>
     <feature automatic="selected" name="Difficulty"/>
     <feature automatic="unselected" name="Easy"/>
-    <feature automatic="unselected" name="Middle"/>
-    <feature manual="selected" name="Hard"/>
+    <feature manual="selected" name="Middle"/>
+    <feature automatic="unselected" name="Hard"/>
     <feature automatic="unselected" name="Pause"/>
     <feature automatic="selected" name="View"/>
     <feature automatic="unselected" name="GUI"/>
